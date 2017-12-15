@@ -1,4 +1,4 @@
-package com.ibm.kickster.gateway.dto;
+package com.rockstar.cloud.gateway.dto;
 
 public class Error {
 	

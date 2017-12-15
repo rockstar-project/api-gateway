@@ -1,4 +1,4 @@
-package com.ibm.kickster.gateway.web;
+package com.rockstar.cloud.gateway.web;
 
 import java.util.Map;
 
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.ibm.kickster.gateway.dto.Error;
+import com.rockstar.cloud.gateway.dto.Error;
 
 @RestController
 public class GatewayErrorHandler implements ErrorController {

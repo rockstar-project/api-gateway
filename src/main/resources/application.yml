@@ -9,10 +9,6 @@ zuul:
       path: /members/**
       service-id: coreapi-member
       strip-prefix: false
-    contents:
-      path: /contents/**
-      service-id: coreapi-content
-      strip-prefix: false
     options:
       path: /options/**
       service-id: coreapi-template
@@ -25,15 +21,6 @@ zuul:
       path: /artifacts/**
       service-id: coreapi-artifact
       strip-prefix: false
-    models:
-      path: /models/**
-      service-id: coreapi-model
-      strip-prefix: false
-    schemas:
-      path: /schemas/**
-      service-id: coreapi-model
-      strip-prefix: false
-
 eureka:
   instance:
     prefer-ip-address: true

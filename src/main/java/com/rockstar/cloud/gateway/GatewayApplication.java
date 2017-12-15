@@ -1,4 +1,4 @@
-package com.ibm.kickster.gateway;
+package com.rockstar.cloud.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
