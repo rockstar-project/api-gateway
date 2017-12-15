@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  gateway:
+    build: .
+    image: $DOCKER_REGISTRY/$DOCKER_NAMESPACE/api-gateway
+    ports:
+      - 80:8765
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SECURITY_OAUTH2_CLIENT_CLIENT_ID=MmE3YTUyMGYtMDc0MC00
+      - SECURITY_OAUTH2_CLIENT_CLIENT_SECRET=MWE1ODUwZjctZjNkMi00
+      - SECURITY_OAUTH2_CLIENT_ACCESS_TOKEN_URI=https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/token
+      - SECURITY_OAUTH2_ClIENT_USER_AUTHORIZATION_URI=https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/authorize
+      - SECURITY_OAUTH2_RESOURCE_USER_INFO_URI=https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/userinfo
+    links:
+      - discovery
+  discovery:
+    image: $DOCKER_REGISTRY/$DOCKER_NAMESPACE/discovery-service
+    ports:
+      - 8761:8761

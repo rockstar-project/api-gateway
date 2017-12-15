@@ -1,0 +1,48 @@
+spring:
+  profiles: docker
+server:
+  port: 8765
+  context-path: /v1
+zuul:
+  routes:
+    members:
+      path: /members/**
+      service-id: coreapi-member
+      strip-prefix: false
+    contents:
+      path: /contents/**
+      service-id: coreapi-content
+      strip-prefix: false
+    options:
+      path: /options/**
+      service-id: coreapi-template
+      strip-prefix: false
+    templates:
+      path: /templates/**
+      service-id: coreapi-template
+      strip-prefix: false
+    artifacts:
+      path: /artifacts/**
+      service-id: coreapi-artifact
+      strip-prefix: false
+    models:
+      path: /models/**
+      service-id: coreapi-model
+      strip-prefix: false
+    schemas:
+      path: /schemas/**
+      service-id: coreapi-model
+      strip-prefix: false
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+logging:
+  level:
+    org.springframework.security.oauth2: DEBUG
