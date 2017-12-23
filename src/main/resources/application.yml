@@ -5,13 +5,9 @@ server:
   context-path: /v1
 zuul:
   routes:
-    members:
-      path: /members/**
-      service-id: coreapi-member
-      strip-prefix: false
-    options:
-      path: /options/**
-      service-id: coreapi-template
+    metadata:
+      path: /metadata/**
+      service-id: coreapi-metadata
       strip-prefix: false
     templates:
       path: /templates/**
@@ -30,6 +26,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://discovery:8761/eureka/
-logging:
-  level:
-    org.springframework.security.oauth2: DEBUG

@@ -1,5 +1,5 @@
 FROM ibmcom/ibmjava
-MAINTAINER ibmcloud bluemix
+MAINTAINER Rockstar Team
 
 ADD target/api-gateway-1.0.0-SNAPSHOT.jar api-gateway.jar
 EXPOSE 8765
