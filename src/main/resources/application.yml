@@ -9,14 +9,29 @@ zuul:
       path: /metadata/**
       service-id: coreapi-metadata
       strip-prefix: false
+      sensitiveHeaders:
     templates:
       path: /templates/**
       service-id: coreapi-template
       strip-prefix: false
+      sensitiveHeaders:
     artifacts:
       path: /artifacts/**
       service-id: coreapi-artifact
       strip-prefix: false
+      sensitiveHeaders:
+proxy:
+  auth:
+    routes:
+      metadata: passthru
+      templates: passthru
+      artifacts: passthru
+security:
+  basic:
+    enabled: false
+logging:
+  level:
+    org.springframework.security.oauth2: DEBUG
 eureka:
   instance:
     prefer-ip-address: true
