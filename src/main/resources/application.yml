@@ -11,8 +11,8 @@ zuul:
       strip-prefix: false
       sensitiveHeaders:
     templates:
-      path: /templates/**
-      service-id: coreapi-template
+      path: /products/**
+      service-id: coreapi-products
       strip-prefix: false
       sensitiveHeaders:
     artifacts:
