@@ -12,7 +12,7 @@ zuul:
       sensitiveHeaders:
     templates:
       path: /products/**
-      service-id: coreapi-products
+      service-id: coreapi-product
       strip-prefix: false
       sensitiveHeaders:
     artifacts:
