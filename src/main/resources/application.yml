@@ -10,9 +10,14 @@ zuul:
       service-id: coreapi-metadata
       strip-prefix: false
       sensitiveHeaders:
-    templates:
+    products:
       path: /products/**
       service-id: coreapi-product
+      strip-prefix: false
+      sensitiveHeaders:
+    collections:
+      path: /collections/**
+      service-id: coreapi-collection
       strip-prefix: false
       sensitiveHeaders:
     artifacts:
