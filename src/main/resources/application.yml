@@ -29,7 +29,8 @@ proxy:
   auth:
     routes:
       metadata: passthru
-      templates: passthru
+      products: passthru
+      collections: passthru
       artifacts: passthru
 security:
   basic:
