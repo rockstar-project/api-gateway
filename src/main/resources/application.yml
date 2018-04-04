@@ -10,6 +10,11 @@ zuul:
       service-id: coreapi-metadata
       strip-prefix: false
       sensitiveHeaders:
+    microservices:
+      path: /microservices/**
+      service-id: coreapi-microservice
+      strip-prefix: true
+      sensitiveHeaders:
     products:
       path: /products/**
       service-id: coreapi-product
@@ -29,6 +34,7 @@ proxy:
   auth:
     routes:
       metadata: passthru
+      microservices: passthru
       products: passthru
       collections: passthru
       artifacts: passthru
